@@ -3,10 +3,12 @@ astroid==2.14.1
 autopep8==2.0.1
 dill==0.3.6
 Django==4.1.6
+gunicorn==21.2.0
 isort==5.12.0
 lazy-object-proxy==1.9.0
 mccabe==0.7.0
 mysqlclient==2.1.1
+packaging==23.1
 platformdirs==2.6.2
 pycodestyle==2.10.0
 pylint==2.16.0
@@ -16,4 +18,5 @@ sqlparse==0.4.3
 tomli==2.0.1
 tomlkit==0.11.6
 typing_extensions==4.4.0
+whitenoise==6.5.0
 wrapt==1.14.1
