@@ -14,6 +14,50 @@ import dj_database_url
 import os
 from pathlib import Path
 
+from pydantic import BaseModel
+from typing import List, Dict
+
+
+class DatabaseConfig(BaseModel):
+    name: str
+    databaseName: str
+    user: str
+
+
+class ServiceConfig(BaseModel):
+    type: str
+    name: str
+    runtime: str
+    buildCommand: str
+    startCommand: str
+    envVars: List[Dict[str, str]]
+
+
+databases = [
+    DatabaseConfig(
+        name="hospital",
+        databaseName="hospital",
+        user="hospital"
+    )
+]
+
+services = [
+    ServiceConfig(
+        type="web",
+        name="hospital",
+        runtime="python",
+        buildCommand="./build.sh",
+        startCommand="gunicorn hospital.wsgi:application",
+        envVars=[
+            {"key": "DATABASE_URL", "fromDatabase": {
+                "name": "hospital", "property": "connectionString"}},
+            {"key": "SECRET_KEY", "generateValue": "true"},
+            {"key": "WEB_CONCURRENCY", "value": "4"}
+        ]
+    )
+]
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

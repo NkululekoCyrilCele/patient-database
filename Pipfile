@@ -9,6 +9,7 @@ pylint-django = "*"
 mysqlclient = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
+pydantic = "*"
 
 [dev-packages]
 autopep8 = "*"
