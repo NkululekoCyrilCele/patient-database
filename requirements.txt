@@ -1,8 +1,8 @@
 asgiref==3.6.0
-astroid==2.14.1
+astroid==2.13.3
 autopep8==2.0.1
 dill==0.3.6
-Django==4.1.6
+Django==4.1.5
 gunicorn==21.2.0
 isort==5.12.0
 lazy-object-proxy==1.9.0
@@ -11,7 +11,7 @@ mysqlclient==2.1.1
 packaging==23.1
 platformdirs==2.6.2
 pycodestyle==2.10.0
-pylint==2.16.0
+pylint==2.15.10
 pylint-django==2.5.3
 pylint-plugin-utils==0.7
 sqlparse==0.4.3
